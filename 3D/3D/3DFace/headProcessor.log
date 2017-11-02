@@ -1,0 +1,312 @@
+Mon Oct  2 15:39:51 2017 INFO B3D API version number: 0.3.1d
+
+Mon Oct  2 15:39:51 2017 INFO B3D internal API version number: 0.3.11.1
+
+Mon Oct  2 15:39:52 2017 INFO Auto detect C cam image rotation
+
+Mon Oct  2 15:39:52 2017 INFO Rotate C Cam images by 90 degrees CCW
+
+Mon Oct  2 15:39:52 2017 >>> compuDepth start frameCount=98
+
+Mon Oct  2 15:39:52 2017 >>> compuDepth: detected head rotation range -82.9 to 81.8
+
+Mon Oct  2 15:39:52 2017 >>> compuDepth: Number of threads=6
+
+Mon Oct  2 15:39:52 2017 INFO compuDepth: detected key frame ids: -1 79 74 70 66 0 18 22 28 38 -1 
+
+Mon Oct  2 15:39:52 2017 INFO compuDepth: preprocessing frame 0 keyFrame=5
+
+Mon Oct  2 15:39:52 2017 INFO compuDepth: thread 0 processing frame=0 keyframe=5
+
+Mon Oct  2 15:39:53 2017 INFO HeadBuilder::buildDepthMap head rotation -6.32 -0.85 0.45
+
+Mon Oct  2 15:39:53 2017 >>> Face distance= 287.23 mm. Desired range (250.0-380.0mm)
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: preprocessing frame 18 keyFrame=5
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: thread 0 processing frame=18 keyframe=5
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: thread 0 processing frame=22 keyframe=6
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: thread 3 processing frame=3 keyframe=5
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: thread 5 processing frame=5 keyframe=5
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: thread 1 processing frame=1 keyframe=5
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: thread 4 processing frame=4 keyframe=5
+
+Mon Oct  2 15:39:53 2017 INFO compuDepth: thread 2 processing frame=2 keyframe=5
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 0 processing frame=28 keyframe=7
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 1 processing frame=6 keyframe=5
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 3 processing frame=8 keyframe=5
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 5 processing frame=10 keyframe=5
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 2 processing frame=7 keyframe=5
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 4 processing frame=9 keyframe=5
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 0 processing frame=38 keyframe=8
+
+Mon Oct  2 15:39:54 2017 INFO compuDepth: thread 1 processing frame=11 keyframe=6
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 4 processing frame=14 keyframe=6
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 3 processing frame=13 keyframe=6
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 2 processing frame=12 keyframe=6
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 5 processing frame=15 keyframe=7
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 0 processing frame=66 keyframe=5
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 4 processing frame=20 keyframe=7
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 1 processing frame=16 keyframe=7
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 3 processing frame=19 keyframe=7
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 2 processing frame=17 keyframe=7
+
+Mon Oct  2 15:39:55 2017 INFO compuDepth: thread 5 processing frame=21 keyframe=7
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 4 processing frame=26 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 0 processing frame=70 keyframe=4
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 1 processing frame=23 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 2 processing frame=24 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 3 processing frame=25 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 5 processing frame=27 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 0 processing frame=74 keyframe=3
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 4 processing frame=32 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 1 processing frame=29 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 3 processing frame=31 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 2 processing frame=30 keyframe=8
+
+Mon Oct  2 15:39:56 2017 INFO compuDepth: thread 5 processing frame=33 keyframe=8
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 0 processing frame=79 keyframe=2
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 4 processing frame=37 keyframe=9
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 1 processing frame=34 keyframe=9
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 2 processing frame=35 keyframe=9
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 5 processing frame=39 keyframe=8
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 3 processing frame=36 keyframe=9
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 0 processing frame=50 keyframe=6
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 4 processing frame=43 keyframe=7
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 1 processing frame=40 keyframe=8
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 5 processing frame=44 keyframe=7
+
+Mon Oct  2 15:39:57 2017 INFO compuDepth: thread 3 processing frame=42 keyframe=8
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 2 processing frame=41 keyframe=8
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 4 processing frame=48 keyframe=6
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 0 processing frame=56 keyframe=5
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 1 processing frame=45 keyframe=7
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 5 processing frame=49 keyframe=6
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 3 processing frame=47 keyframe=7
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 2 processing frame=46 keyframe=7
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 4 processing frame=54 keyframe=5
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 0 processing frame=62 keyframe=4
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 1 processing frame=51 keyframe=6
+
+Mon Oct  2 15:39:58 2017 INFO compuDepth: thread 5 processing frame=55 keyframe=5
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 2 processing frame=52 keyframe=6
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 3 processing frame=53 keyframe=5
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 4 processing frame=60 keyframe=5
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 1 processing frame=57 keyframe=5
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 5 processing frame=61 keyframe=5
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 0 processing frame=69 keyframe=3
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 2 processing frame=58 keyframe=5
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 3 processing frame=59 keyframe=5
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 4 processing frame=67 keyframe=4
+
+Mon Oct  2 15:39:59 2017 INFO compuDepth: thread 1 processing frame=63 keyframe=4
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 0 processing frame=77 keyframe=2
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 5 processing frame=68 keyframe=3
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 3 processing frame=65 keyframe=4
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 2 processing frame=64 keyframe=4
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 4 processing frame=75 keyframe=2
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 1 processing frame=71 keyframe=3
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 0 processing frame=84 keyframe=1
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 5 processing frame=76 keyframe=2
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 2 processing frame=72 keyframe=2
+
+Mon Oct  2 15:40:00 2017 INFO compuDepth: thread 3 processing frame=73 keyframe=2
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 4 processing frame=82 keyframe=1
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 1 processing frame=78 keyframe=2
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 0 processing frame=90 keyframe=3
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 3 processing frame=81 keyframe=1
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 2 processing frame=80 keyframe=1
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 5 processing frame=83 keyframe=1
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 4 processing frame=88 keyframe=2
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 1 processing frame=85 keyframe=1
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 0 processing frame=96 keyframe=5
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 2 processing frame=86 keyframe=1
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 3 processing frame=87 keyframe=2
+
+Mon Oct  2 15:40:01 2017 INFO compuDepth: thread 5 processing frame=89 keyframe=3
+
+Mon Oct  2 15:40:02 2017 INFO compuDepth: thread 1 processing frame=91 keyframe=3
+
+Mon Oct  2 15:40:02 2017 INFO compuDepth: thread 4 processing frame=94 keyframe=4
+
+Mon Oct  2 15:40:02 2017 INFO compuDepth: thread 2 processing frame=92 keyframe=3
+
+Mon Oct  2 15:40:02 2017 INFO compuDepth: thread 3 processing frame=93 keyframe=4
+
+Mon Oct  2 15:40:02 2017 INFO compuDepth: thread 5 processing frame=95 keyframe=5
+
+Mon Oct  2 15:40:02 2017 INFO compuDepth: thread 1 processing frame=97 keyframe=5
+
+Mon Oct  2 15:40:02 2017 >>> compuDepth: start mergeFrames...
+
+Mon Oct  2 15:40:03 2017 >>> compuDepth: start filtering...
+
+Mon Oct  2 15:40:03 2017 INFO HeadBuilder::filterDepthMap scanMode is 1. Face rect is (102 92 849 460)
+
+Mon Oct  2 15:40:04 2017 >>> compuDepth takes total: 11.5126 sec
+
+Mon Oct  2 15:40:04 2017 >>> -- Frames processed: 98. avg time: 103.08 msec/fr. total: 10.1023 sec (with OMP if enabled)
+
+Mon Oct  2 15:40:04 2017 >>> ---- Single frame time (no OMP): 546.73 msec
+
+Mon Oct  2 15:40:04 2017 >>> ------ Read frame: 69.94 msec/fr. 12.79%
+
+Mon Oct  2 15:40:04 2017 >>> ------ Compute depth: 267.17 msec/fr. 48.87%
+
+Mon Oct  2 15:40:04 2017 >>> ------ Tracking: 148.56 msec/fr. 27.17%
+
+Mon Oct  2 15:40:04 2017 >>> ------ Projection: 39.22 msec/fr. 7.17%
+
+Mon Oct  2 15:40:04 2017 >>> ------ Merging: 15.53 msec/fr. 2.84%
+
+Mon Oct  2 15:40:04 2017 >>> ------ Wait time: 0.00 msec/fr. 0.00%
+
+Mon Oct  2 15:40:04 2017 >>> -- Merge frames: 0.5033 sec
+
+Mon Oct  2 15:40:04 2017 >>> -- Est C Cams: 0.0070 sec
+
+Mon Oct  2 15:40:04 2017 >>> -- Filtering: 0.4775 sec
+
+Mon Oct  2 15:40:04 2017 >>> compuTexture start... 
+
+Mon Oct  2 15:40:04 2017 INFO computeTexture: head rotation angle range -84.5 to 85.8
+
+Mon Oct  2 15:40:04 2017 INFO computeTexture: selected files index(angle): 13(-70) 35(70) 8(-35) 31(35) 
+
+Mon Oct  2 15:40:10 2017 >>> compuTexture takes total 6.4324 sec (with OMP if enabled)
+
+Mon Oct  2 15:40:10 2017 >>> -- Select color images: 1903.68 msec
+
+Mon Oct  2 15:40:10 2017 >>> -- Project color images: 4427.93 msec
+
+Mon Oct  2 15:40:10 2017 >>> -- Blend color images: 100.78 msec
+
+Mon Oct  2 15:40:10 2017 INFO White balance enabled target color=240.0 245.0 255.0
+
+Mon Oct  2 15:40:11 2017 INFO Saved to sdcard/Bellus3d/FaceCamera/Output/2017.10.02.15.39.25/Output_sd/head3d.jpg
+
+Mon Oct  2 15:40:11 2017 >>> Enhance depth from texture map
+
+Mon Oct  2 15:40:12 2017 INFO Input: 238966 vertices, 475396 triangles (target 61671)
+
+Mon Oct  2 15:40:14 2017 INFO Output: 31044 vertices, 61670 triangles (0.129723 reduction; 1.9947 sec)
+
+Mon Oct  2 15:40:14 2017 INFO Saved to sdcard/Bellus3d/FaceCamera/Output/2017.10.02.15.39.25/Output_sd/head3d.obj.mtl
+
+Mon Oct  2 15:40:14 2017 INFO Saving merged mesh to sdcard/Bellus3d/FaceCamera/Output/2017.10.02.15.39.25/Output_sd/head3d.obj...
+
+Mon Oct  2 15:40:14 2017 INFO Saving face landmarks to sdcard/Bellus3d/FaceCamera/Output/2017.10.02.15.39.25/Output_sd/faceLandmarks.obj.yml
+
+Mon Oct  2 15:40:14 2017 INFO Saving face landmarks to sdcard/Bellus3d/FaceCamera/Output/2017.10.02.15.39.25/Output_sd/faceLandmarks.obj
+
+Mon Oct  2 15:40:14 2017 INFO pupil distance=60.34 mm
+
+Mon Oct  2 15:40:14 2017 >>> Head pose tracking takes 0.0000 sec
+
+Mon Oct  2 15:40:14 2017 >>> Mesh creation takes 11.5291 sec
+
+Mon Oct  2 15:40:14 2017 >>> Texture creation takes 6.5368 sec
+
+Mon Oct  2 15:40:14 2017 >>> Mesh enhancement takes 0.6789 sec
+
+Mon Oct  2 15:40:14 2017 >>> Mesh simplification takes 2.2600 sec
+
+Mon Oct  2 15:40:14 2017 >>> Writing mesh and texture files takes 0.9290 sec
+
+Mon Oct  2 15:40:14 2017 >>> BuildMesh total time: 22.7744 sec
+
+Mon Oct  2 15:40:15 2017 INFO HeadScannerSessionData::clear() called
+
+Mon Oct  2 15:40:15 2017 INFO Deleted folder: sdcard/Bellus3d/FaceCamera/SDK/CaptureData/2017.10.02.15.39.25/Camera/L/
+
+Mon Oct  2 15:40:15 2017 INFO Deleted folder: sdcard/Bellus3d/FaceCamera/SDK/CaptureData/2017.10.02.15.39.25/Camera/R/
+
+Mon Oct  2 15:40:15 2017 INFO Deleted folder: sdcard/Bellus3d/FaceCamera/SDK/CaptureData/2017.10.02.15.39.25/Camera/M/
+
+Mon Oct  2 15:40:15 2017 INFO Deleted folder: sdcard/Bellus3d/FaceCamera/SDK/CaptureData/2017.10.02.15.39.25/Camera/C/
+
+Mon Oct  2 15:40:15 2017 INFO Deleted folder: sdcard/Bellus3d/FaceCamera/SDK/CaptureData/2017.10.02.15.39.25/Camera/poseL/
+
+Mon Oct  2 15:40:15 2017 INFO Deleted folder: sdcard/Bellus3d/FaceCamera/SDK/CaptureData/2017.10.02.15.39.25/CalibrationFiles/
+
