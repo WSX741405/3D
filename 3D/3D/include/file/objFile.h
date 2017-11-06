@@ -4,7 +4,7 @@
 #include <string>
 #include <pcl/TextureMesh.h>
 #include <pcl/io/io.h>
-#include <pcl/io/vtk_lib_io.h>
+#include <pcl/io/obj_io.h>
 
 #include "file/3DFile.h";
 
@@ -14,13 +14,13 @@ class ObjFile : ThreeDFile<PointT>
 public:
 	ObjFile(std::string dir = "") : ThreeDFile(dir)
 	{
+		_cloud = new pcl::PointCloud<PointT>();
 	}
 
 	void LoadFile()
 	{
-		pcl::io::loadPolygonFile(_dir, _mesh);
-		_cloud = new pcl::PointCloud<PointT>();
-		pcl::fromPCLPointCloud2(_mesh.cloud, *_cloud);
+		pcl::OBJReader obj;
+		obj.read(_dir, *_cloud);
 	}
 
 	pcl::PointCloud<PointT>* GetCloud()
@@ -29,7 +29,6 @@ public:
 	}
 
 private:
-	pcl::PolygonMesh _mesh;
 	pcl::PointCloud<PointT>* _cloud;
 };
 

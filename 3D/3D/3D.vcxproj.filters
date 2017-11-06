@@ -21,11 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\main.cpp">
-      <Filter>原始程式檔</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="include\file\objFile.h">
       <Filter>標頭檔\file</Filter>
     </ClInclude>
@@ -38,5 +33,10 @@
     <ClInclude Include="include\viewer\viewer.h">
       <Filter>標頭檔\viewer</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="include\main.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
