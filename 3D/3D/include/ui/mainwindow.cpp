@@ -1,13 +1,30 @@
-#include "mainwindow.h"
+#include <QFileDialog>
+#include <QMessageBox>
+#include "mainWindow.h"
+#include "pModel.h"
 
-mainWindow::mainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::_mainWindow())
+MainWindow::MainWindow(PModel* pModel, QWidget *parent) : _pModel(pModel), QMainWindow(parent) , _ui(new Ui::_mainWindow())
 {
-	ui->setupUi(this);
-	//	event
-	//connect(ui->_open3DFileBtn, SIGNAL(clicked()), this, SLOT();
+	_ui->setupUi(this);
+	//	  event
+	connect(_ui->_open3DFileBtn, SIGNAL(clicked()), this, SLOT(Open3DFileDialogSlot()));
 }
 
-mainWindow::~mainWindow()
+MainWindow::~MainWindow()
 {
+}
 
+void MainWindow::Open3DFileDialogSlot()
+{
+	QFileDialog openFileDialog(this);
+	openFileDialog.setWindowTitle(tr("Open 3D File"));
+	openFileDialog.setDirectory(".");
+	openFileDialog.setNameFilter((QString)tr("OBJ(*.obj);;PLY(*.ply);;PCD(*.pcd)"));
+	if (openFileDialog.exec() == QDialog::Accepted) {
+		QString dir = openFileDialog.selectedFiles()[0];
+		QString filter = openFileDialog.selectedNameFilter();
+	}
+	else {
+		QMessageBox::information(NULL, tr("Open 3D File"), tr("You didn't select any files."));
+	}
 }
