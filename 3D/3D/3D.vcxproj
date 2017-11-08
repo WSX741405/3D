@@ -100,9 +100,9 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\lib;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\Boost\lib;D:\Software\QT5.7.1\5.7\msvc2015_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Software\QT5.7.1\5.7\msvc2015_64\lib;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\lib;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\Boost\lib;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\VTK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>pcl_io_debug.lib;pcl_common_debug.lib;pcl_visualization_debug.lib;libboost_thread-vc140-mt-gd-1_57.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>pcl_io_debug.lib;pcl_common_debug.lib;pcl_visualization_debug.lib;libboost_thread-vc140-mt-gd-1_57.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;vtkCommonCore-6.2-gd.lib;vtkCommonDataModel-6.2-gd.lib;vtkCommonMath-6.2-gd.lib;vtkRenderingCore-6.2-gd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

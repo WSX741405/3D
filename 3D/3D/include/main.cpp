@@ -4,8 +4,6 @@
 #include "ui/mainWindow.h"
 #include "pModel.h"
 
-typedef pcl::PointXYZ PointT;
-
 int main(int argc, char *argv[])
 {
 	PModel* pModel = new PModel();

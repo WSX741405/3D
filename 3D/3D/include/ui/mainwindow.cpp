@@ -1,5 +1,6 @@
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QString>
 #include "mainWindow.h"
 #include "pModel.h"
 
@@ -17,14 +18,17 @@ MainWindow::~MainWindow()
 void MainWindow::Open3DFileDialogSlot()
 {
 	QFileDialog openFileDialog(this);
-	openFileDialog.setWindowTitle(tr("Open 3D File"));
+	openFileDialog.setWindowTitle(tr("Open Point Cloud"));
 	openFileDialog.setDirectory(".");
 	openFileDialog.setNameFilter((QString)tr("OBJ(*.obj);;PLY(*.ply);;PCD(*.pcd)"));
-	if (openFileDialog.exec() == QDialog::Accepted) {
+	if (openFileDialog.exec() == QDialog::Accepted)
+	{
 		QString dir = openFileDialog.selectedFiles()[0];
 		QString filter = openFileDialog.selectedNameFilter();
+		_pModel->Open3DFile(dir.toStdString(), filter.toStdString());
 	}
-	else {
-		QMessageBox::information(NULL, tr("Open 3D File"), tr("You didn't select any files."));
+	else 
+	{
+		QMessageBox::information(NULL, tr("Open Point Cloud"), tr("You didn't select any files."));
 	}
 }

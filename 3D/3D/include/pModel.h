@@ -4,20 +4,30 @@
 #include "file/fileFactory.h"
 #include "viewer/viewer.h"
 
+typedef pcl::PointXYZ PointT;
+
 class PModel
 {
 public:
-	PModel()
+	PModel() : _currFile(NULL)
 	{
+		_fileFactory = new FileFactory<PointT>();
+		_viewer = new Viewer<PointT>();
 	}
-	/*
-	std::string dir = std::string("3DFace/head3d.obj");
-	FileFactory<PointT>* fileFactory = new FileFactory<PointT>();
-	ThreeDFile<PointT>* file = fileFactory->GetObjFile(dir);
-	file->LoadFile();
-	Viewer<PointT>* viewer = new Viewer<PointT>();
-	viewer->Show(file->GetCloud());
-	*/
+
+	void Open3DFile(std::string dir, std::string filter)
+	{
+		if (filter == std::string("OBJ(*.obj)"))
+		{
+			_currFile = _fileFactory->GetObjFile(dir);
+		}
+		_currFile->LoadFile();
+		_viewer->Show(_currFile->GetCloud());
+	}
+private:
+	FileFactory<PointT>* _fileFactory;
+	ThreeDFile<PointT>* _currFile;
+	Viewer<PointT>* _viewer;
 };
 
 #endif
