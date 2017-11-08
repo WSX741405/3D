@@ -93,5 +93,8 @@
     <ClInclude Include="include\pModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\file\plyFile.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

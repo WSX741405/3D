@@ -3,6 +3,7 @@
 
 #include "file/3DFile.h";
 #include "file/objFile.h";
+#include "file/plyFile.h";
 
 template<typename PointT>
 class FileFactory
@@ -15,6 +16,12 @@ public:
 	ThreeDFile<PointT>* GetObjFile(std::string dir = "")
 	{
 		ObjFile<PointT>* file = new ObjFile<PointT>(dir);
+		return (ThreeDFile<PointT>*)file;
+	}
+
+	ThreeDFile<PointT>* GetPlyFile(std::string dir = "")
+	{
+		PlyFile<PointT>* file = new PlyFile<PointT>(dir);
 		return (ThreeDFile<PointT>*)file;
 	}
 };

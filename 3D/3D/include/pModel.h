@@ -4,7 +4,7 @@
 #include "file/fileFactory.h"
 #include "viewer/viewer.h"
 
-typedef pcl::PointXYZ PointT;
+typedef pcl::PointXYZRGB PointT;
 
 class PModel
 {
@@ -21,9 +21,14 @@ public:
 		{
 			_currFile = _fileFactory->GetObjFile(dir);
 		}
+		else if(filter == std::string("PLY(*.ply)"))
+		{
+			_currFile = _fileFactory->GetPlyFile(dir);
+		}
 		_currFile->LoadFile();
 		_viewer->Show(_currFile->GetCloud());
 	}
+
 private:
 	FileFactory<PointT>* _fileFactory;
 	ThreeDFile<PointT>* _currFile;
