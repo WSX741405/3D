@@ -9,6 +9,7 @@ MainWindow::MainWindow(PModel* pModel, QWidget *parent) : _pModel(pModel), QMain
 	_ui->setupUi(this);
 	//	  event
 	connect(_ui->_open3DFileBtn, SIGNAL(clicked()), this, SLOT(Open3DFileDialogSlot()));
+	connect(_ui->_clearViewerBtn, SIGNAL(clicked()), this, SLOT(ClearViewerSlot()));
 }
 
 MainWindow::~MainWindow()
@@ -31,4 +32,9 @@ void MainWindow::Open3DFileDialogSlot()
 	{
 		QMessageBox::information(NULL, tr("Open Point Cloud"), tr("You didn't select any files."));
 	}
+}
+
+void MainWindow::ClearViewerSlot()
+{
+	_pModel->ClearViewer();
 }

@@ -15,6 +15,7 @@ public:
 		_viewer = new Viewer<PointT>();
 	}
 
+	//				File
 	void Open3DFile(std::string dir, std::string filter)
 	{
 		if (filter == std::string("OBJ(*.obj)"))
@@ -27,6 +28,12 @@ public:
 		}
 		_currFile->LoadFile();
 		_viewer->Show(_currFile->GetCloud());
+	}
+
+	//				Viewer
+	void ClearViewer()
+	{
+		_viewer->Clear();
 	}
 
 private:

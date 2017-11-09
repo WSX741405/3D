@@ -15,6 +15,7 @@ public:
 
 public slots:
 	void Open3DFileDialogSlot();
+	void ClearViewerSlot();
 
 private:
 

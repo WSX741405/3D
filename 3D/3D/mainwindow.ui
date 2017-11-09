@@ -27,6 +27,19 @@
      <string>Open 3D File</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="_clearViewerBtn">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>75</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear Viewer</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
