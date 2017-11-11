@@ -26,7 +26,8 @@ void MainWindow::Open3DFileDialogSlot()
 	{
 		QString dir = openFileDialog.selectedFiles()[0];
 		QString filter = openFileDialog.selectedNameFilter();
-		_pModel->Open3DFile(dir.toStdString(), filter.toStdString());
+		//_pModel->Open3DFile(dir.toStdString(), filter.toStdString());//中文路徑會報錯
+		_pModel->Open3DFile(std::string((const char *)dir.toLocal8Bit()), filter.toStdString());//以前寫的時候有用到(const char *)，但現在忘記為什麼要用，不用好像也不會有問題
 	}
 	else 
 	{
