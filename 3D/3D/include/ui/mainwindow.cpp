@@ -4,7 +4,7 @@
 #include "mainWindow.h"
 #include "pModel.h"
 
-MainWindow::MainWindow(PModel* pModel, QWidget *parent) : _pModel(pModel), QMainWindow(parent) , _ui(new Ui::_mainWindow())
+MainWindow::MainWindow(PModel* pModel, QWidget *parent) : _pModel(pModel), QMainWindow(parent), _ui(new Ui::_mainWindow())
 {
 	_ui->setupUi(this);
 	//	  event
@@ -26,10 +26,9 @@ void MainWindow::Open3DFileDialogSlot()
 	{
 		QString dir = openFileDialog.selectedFiles()[0];
 		QString filter = openFileDialog.selectedNameFilter();
-		//_pModel->Open3DFile(dir.toStdString(), filter.toStdString());//中文路徑會報錯
-		_pModel->Open3DFile(std::string((const char *)dir.toLocal8Bit()), filter.toStdString());//以前寫的時候有用到(const char *)，但現在忘記為什麼要用，不用好像也不會有問題
+		_pModel->Open3DFile(std::string(dir.toLocal8Bit()), filter.toStdString());
 	}
-	else 
+	else
 	{
 		QMessageBox::information(NULL, tr("Open Point Cloud"), tr("You didn't select any files."));
 	}
