@@ -45,6 +45,12 @@
     <Filter Include="Source Files\ui">
       <UniqueIdentifier>{527b7adb-a82e-4c93-b3f5-54c5d9a55439}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\grabber">
+      <UniqueIdentifier>{dd3bf796-b547-4994-8582-6f9af857a35f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\grabber\rsgrabber">
+      <UniqueIdentifier>{7c319a69-68ad-403a-8e91-e56f03b89666}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\main.cpp">
@@ -61,6 +67,12 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_mainWindow.cpp">
       <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\grabber\rsgrabber\real_sense_grabber.cpp">
+      <Filter>Header Files\grabber\rsgrabber</Filter>
+    </ClCompile>
+    <ClCompile Include="include\grabber\grabberNotify.cpp">
+      <Filter>Header Files\grabber</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +107,39 @@
     </ClInclude>
     <ClInclude Include="include\file\plyFile.h">
       <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\rsGrabber.h">
+      <Filter>Header Files\grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\grabber.h">
+      <Filter>Header Files\grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\grabberFactory.h">
+      <Filter>Header Files\grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\rsgrabber\buffers.h">
+      <Filter>Header Files\grabber\rsgrabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\rsgrabber\buffers.hpp">
+      <Filter>Header Files\grabber\rsgrabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\rsgrabber\io_exception.h">
+      <Filter>Header Files\grabber\rsgrabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\rsgrabber\real_sense_device_manager.h">
+      <Filter>Header Files\grabber\rsgrabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\rsgrabber\real_sense_grabber.h">
+      <Filter>Header Files\grabber\rsgrabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\rsgrabber\time.h">
+      <Filter>Header Files\grabber\rsgrabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grabber\grabberNotify.h">
+      <Filter>Header Files\grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="include\viewNotify.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

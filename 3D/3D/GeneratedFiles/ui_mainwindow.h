@@ -29,6 +29,7 @@ public:
     QWidget *centralWidget;
     QPushButton *_open3DFileBtn;
     QPushButton *_clearViewerBtn;
+    QPushButton *_openRSBtn;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -46,6 +47,9 @@ public:
         _clearViewerBtn = new QPushButton(centralWidget);
         _clearViewerBtn->setObjectName(QStringLiteral("_clearViewerBtn"));
         _clearViewerBtn->setGeometry(QRect(140, 30, 75, 25));
+        _openRSBtn = new QPushButton(centralWidget);
+        _openRSBtn->setObjectName(QStringLiteral("_openRSBtn"));
+        _openRSBtn->setGeometry(QRect(250, 30, 75, 25));
         _mainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(_mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -68,6 +72,7 @@ public:
         _mainWindow->setWindowTitle(QApplication::translate("_mainWindow", "mainWindow", Q_NULLPTR));
         _open3DFileBtn->setText(QApplication::translate("_mainWindow", "Open 3D File", Q_NULLPTR));
         _clearViewerBtn->setText(QApplication::translate("_mainWindow", "Clear Viewer", Q_NULLPTR));
+        _openRSBtn->setText(QApplication::translate("_mainWindow", "Open RS", Q_NULLPTR));
     } // retranslateUi
 
 };

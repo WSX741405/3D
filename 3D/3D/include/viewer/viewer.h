@@ -9,29 +9,23 @@ class Viewer
 public:
 	Viewer(std::string title = "") : _title(title)
 	{
-		_cloudPointId = 0;
-		_viewer = new pcl::visualization::PCLVisualizer(_title);
-		_viewerPtr = boost::shared_ptr<pcl::visualization::PCLVisualizer>(_viewer);
+		_viewerPtr = boost::shared_ptr<pcl::visualization::PCLVisualizer>(new pcl::visualization::PCLVisualizer(_title));
 	}
 
 	void Clear()
 	{
 		_viewerPtr->removeAllPointClouds();
-		_cloudPointId = 0;
 	}
 
-	void Show(pcl::PointCloud<PointT>* cloud)
+	void Show(boost::shared_ptr<pcl::PointCloud<PointT>> cloud)
 	{
-		boost::shared_ptr<pcl::PointCloud<PointT>>cloudShrPtr(cloud);
-		_viewerPtr->addPointCloud<PointT>(cloudShrPtr, std::to_string(_cloudPointId));
+		_viewerPtr->removePointCloud();
+		_viewerPtr->addPointCloud(cloud);
 		_viewerPtr->resetCamera();
-		_cloudPointId++;
 	}
 
 private:
-	int _cloudPointId;
 	std::string _title;
-	pcl::visualization::PCLVisualizer* _viewer;
 	boost::shared_ptr<pcl::visualization::PCLVisualizer> _viewerPtr;
 };
 

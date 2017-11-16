@@ -91,7 +91,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PreprocessorDefinitions>UNICODE;WIN32;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\include\pcl-1.7;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\Eigen\eigen3;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\Boost\include\boost-1_57;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\VTK\include\vtk-6.2;.\GeneratedFiles;.;.\GeneratedFiles\$(ConfigurationName);D:\Software\QT5.7.1\5.7\msvc2015_64\include;D:\Software\QT5.7.1\5.7\msvc2015_64\include\QtCore;D:\Software\QT5.7.1\5.7\msvc2015_64\include\QtGui;D:\Software\QT5.7.1\5.7\msvc2015_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;include;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\include\pcl-1.8;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\Eigen\eigen3;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\Boost\include\boost-1_61;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0;D:\Software\QT5.7.1\5.7\msvc2015_64\include;D:\Software\QT5.7.1\5.7\msvc2015_64\include\QtCore;D:\Software\QT5.7.1\5.7\msvc2015_64\include\QtGui;D:\Software\QT5.7.1\5.7\msvc2015_64\include\QtWidgets;C:\Program Files (x86)\Intel\RSSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -100,9 +100,9 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>D:\Software\QT5.7.1\5.7\msvc2015_64\lib;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\lib;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\Boost\lib;D:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\VTK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib;C:\Program Files (x86)\Intel\RSSDK\lib\x64;D:\Software\QT5.7.1\5.7\msvc2015_64\lib;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\lib;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\Boost\lib;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\VTK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>pcl_io_debug.lib;pcl_common_debug.lib;pcl_visualization_debug.lib;libboost_thread-vc140-mt-gd-1_57.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;vtkCommonCore-6.2-gd.lib;vtkCommonDataModel-6.2-gd.lib;vtkCommonMath-6.2-gd.lib;vtkRenderingCore-6.2-gd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>real_sense.lib;pcl_io_debug.lib;pcl_common_debug.lib;pcl_visualization_debug.lib;libboost_thread-vc140-mt-gd-1_61.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;vtkGUISupportQt-7.0-gd.lib;vtkInteractionStyle-7.0-gd.lib;vtkImagingColor-7.0-gd.lib;vtkRenderingCore-7.0-gd.lib;vtkCommonColor-7.0-gd.lib;vtkalglib-7.0-gd.lib;vtkImagingFourier-7.0-gd.lib;vtkImagingCore-7.0-gd.lib;vtkFiltersGeometry-7.0-gd.lib;vtkFiltersSources-7.0-gd.lib;vtkFiltersGeneral-7.0-gd.lib;vtkFiltersCore-7.0-gd.lib;vtkCommonExecutionModel-7.0-gd.lib;vtkCommonComputationalGeometry-7.0-gd.lib;vtkCommonDataModel-7.0-gd.lib;vtkCommonMisc-7.0-gd.lib;vtkCommonTransforms-7.0-gd.lib;vtkCommonMath-7.0-gd.lib;vtkCommonSystem-7.0-gd.lib;vtkCommonCore-7.0-gd.lib;vtksys-7.0-gd.lib;vtkzlib-7.0-gd.lib;libpxc_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,6 +156,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="include\grabber\grabberNotify.cpp" />
+    <ClCompile Include="include\grabber\rsgrabber\real_sense_grabber.cpp" />
     <ClCompile Include="include\main.cpp" />
     <ClCompile Include="include\ui\mainWindow.cpp" />
   </ItemGroup>
@@ -172,7 +174,7 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing mainWindow.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB "-I.\include" "-ID:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\include\pcl-1.7" "-ID:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\Eigen\eigen3" "-ID:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\Boost\include\boost-1_57" "-ID:\Software\PCL-1.7.2-vs2015\PCL 1.7.2\3rdParty\VTK\include\vtk-6.2" "-I.\GeneratedFiles" "-I." "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include" "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include\QtCore" "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include\QtGui" "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include\QtWidgets"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB  "-I." "-I.\include" "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\include\pcl-1.8" "-ID:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\Eigen\eigen3" "-ID:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\Boost\include\boost-1_61" "-ID:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0" "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include" "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include\QtCore" "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include\QtGui" "-ID:\Software\QT5.7.1\5.7\msvc2015_64\include\QtWidgets" "-IC:\Program Files (x86)\Intel\RSSDK\include"</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing mainWindow.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -183,7 +185,18 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets"</Command>
     </CustomBuild>
     <ClInclude Include="include\file\plyFile.h" />
+    <ClInclude Include="include\grabber\grabber.h" />
+    <ClInclude Include="include\grabber\grabberFactory.h" />
+    <ClInclude Include="include\grabber\grabberNotify.h" />
+    <ClInclude Include="include\grabber\rsGrabber.h" />
+    <ClInclude Include="include\grabber\rsgrabber\buffers.h" />
+    <ClInclude Include="include\grabber\rsgrabber\buffers.hpp" />
+    <ClInclude Include="include\grabber\rsgrabber\io_exception.h" />
+    <ClInclude Include="include\grabber\rsgrabber\real_sense_device_manager.h" />
+    <ClInclude Include="include\grabber\rsgrabber\real_sense_grabber.h" />
+    <ClInclude Include="include\grabber\rsgrabber\time.h" />
     <ClInclude Include="include\pModel.h" />
+    <ClInclude Include="include\viewNotify.h" />
     <ClInclude Include="include\viewer\viewer.h" />
   </ItemGroup>
   <ItemGroup>

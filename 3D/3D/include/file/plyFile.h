@@ -12,7 +12,8 @@ class PlyFile : ThreeDFile<PointT>
 public:
 	PlyFile(std::string dir = "") : ThreeDFile(dir)
 	{
-		_cloud = new pcl::PointCloud<PointT>();
+		//_cloud = new pcl::PointCloud<PointT>();
+		_cloud = boost::shared_ptr<pcl::PointCloud<PointT>>(new pcl::PointCloud<PointT>);
 	}
 
 	void LoadFile()
@@ -20,13 +21,13 @@ public:
 		pcl::io::loadPLYFile(_dir, *_cloud);
 	}
 
-	pcl::PointCloud<PointT>* GetCloud()
+	boost::shared_ptr<pcl::PointCloud<PointT>> GetCloud()
 	{
 		return _cloud;
 	}
 
 private:
-	pcl::PointCloud<PointT>* _cloud;
+	boost::shared_ptr<pcl::PointCloud<PointT>> _cloud;
 };
 
 #endif
