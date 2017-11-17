@@ -38,7 +38,7 @@ public:
     {
         if (_mainWindow->objectName().isEmpty())
             _mainWindow->setObjectName(QStringLiteral("_mainWindow"));
-        _mainWindow->resize(688, 563);
+        _mainWindow->resize(600, 600);
         centralWidget = new QWidget(_mainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         _open3DFileBtn = new QPushButton(centralWidget);
@@ -53,7 +53,7 @@ public:
         _mainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(_mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 688, 21));
+        menuBar->setGeometry(QRect(0, 0, 600, 21));
         _mainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(_mainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));

@@ -17,6 +17,11 @@ public:
 		_function = boost::bind(&RSGrabber::CloudCallback, this, _1);
 	}
 
+	~RSGrabber()
+	{
+		_connection.disconnect();
+	}
+
 	void OpenGrabber()
 	{
 		boost::mutex::scoped_lock lock(_mutex);
@@ -24,7 +29,7 @@ public:
 		_grabber->start();
 	}
 
-	boost::shared_ptr<pcl::PointCloud<PointT>> GetCloud()
+	boost::shared_ptr<pcl::PointCloud<PointT>> GetPointCloud()
 	{
 		return _cloud;
 	}

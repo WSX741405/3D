@@ -1,14 +1,11 @@
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QString>
-#include <vtkRenderWindow.h>
-#include <QVTKWidget.h>
 #include "mainWindow.h"
-#include "pModel.h"
 
-MainWindow::MainWindow(PModel* pModel, QWidget *parent) : _pModel(pModel), QMainWindow(parent), _ui(new Ui::_mainWindow())
+MainWindow::MainWindow(PModel* pModel, ViewerNotify* viewerNotify, QWidget *parent) : _pModel(pModel),_viewerNotify(viewerNotify), QMainWindow(parent), _ui(new Ui::_mainWindow())
 {
 	_ui->setupUi(this);
+	_viewer = new Viewer<PointT>();
+	_viewerNotify->Attach(this);
+	_pModel->SetViewerNotify(viewerNotify);
 	InitialVtkWidget();
 	//	  event
 	connect(_ui->_open3DFileBtn, SIGNAL(clicked()), this, SLOT(Open3DFileDialogSlot()));
@@ -18,30 +15,12 @@ MainWindow::MainWindow(PModel* pModel, QWidget *parent) : _pModel(pModel), QMain
 
 void MainWindow::InitialVtkWidget()
 {
-	//pcl::PointCloud<pcl::PointXYZ>::Ptr cloud;
-	//cloud.reset(new pcl::PointCloud<pcl::PointXYZ>);
-	//boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer;
-	//viewer.reset(new pcl::visualization::PCLVisualizer("viewer", false));
 	_widget = new QVTKWidget(this->centralWidget());
-	_widget->setGeometry(QRect(20, 20, 500, 500));
+	_widget->setGeometry(QRect(30, 85, 500, 500));
 
-	/*float radius = 10.0f;
-	for (float theta(0.0); theta <= 360.0f; theta += 2.0f) {
-		for (float phi(0.0); phi <= 180.0f; phi += 2.0f) {
-			pcl::PointXYZ tmp_point;
-			tmp_point.x = radius*cosf(pcl::deg2rad(theta))*sinf(pcl::deg2rad(phi));
-			tmp_point.y = radius*sinf(pcl::deg2rad(theta))*sinf(pcl::deg2rad(phi));
-			tmp_point.z = radius*cosf(pcl::deg2rad(phi));
-			cloud->points.push_back(tmp_point);
-		}
-	}
-
-	viewer->addPointCloud(cloud, "cloud");
-	_widget->SetRenderWindow(viewer->getRenderWindow());
-	viewer->setupInteractor(_widget->GetInteractor(), _widget->GetRenderWindow());
-	viewer->addCoordinateSystem(2.0);
-	*/
-
+	_widget->SetRenderWindow(_viewer->GetRenderWindow());
+	_viewer->SetupInteractor(_widget->GetInteractor(), _widget->GetRenderWindow());
+	_viewer->AddCoordinateSystem(2.0);
 	_widget->update();
 }
 
@@ -69,7 +48,7 @@ void MainWindow::Open3DFileDialogSlot()
 
 void MainWindow::ClearViewerSlot()
 {
-	_pModel->ClearViewer();
+	//_pModel->ClearViewer();
 }
 
 void MainWindow::OpenRSGrabberSlot()
@@ -77,7 +56,14 @@ void MainWindow::OpenRSGrabberSlot()
 	_pModel->OpenRSGrabber();
 }
 
-void MainWindow::UpdateViewer()
+void MainWindow::ShowFilePointCloud()
 {
-	//_viewer->Show();
+	_viewer->Show(_pModel->GetFilePointCloud());
+	_widget->update();
+}
+
+void MainWindow::ShowGrabberPointCloud()
+{
+	_viewer->Show(_pModel->GetGrabberPointCloud());
+	_widget->update();
 }

@@ -74,6 +74,12 @@
     <ClCompile Include="include\grabber\grabberNotify.cpp">
       <Filter>Header Files\grabber</Filter>
     </ClCompile>
+    <ClCompile Include="include\viewer\viewerNotify.cpp">
+      <Filter>Header Files\viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="include\pModel.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="include\ui\mainWindow.h">
@@ -83,7 +89,7 @@
       <Filter>Resource Files</Filter>
     </CustomBuild>
     <CustomBuild Include="mainWindow.ui">
-      <Filter>Form Files</Filter>
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -138,8 +144,8 @@
     <ClInclude Include="include\grabber\grabberNotify.h">
       <Filter>Header Files\grabber</Filter>
     </ClInclude>
-    <ClInclude Include="include\viewNotify.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\viewer\viewerNotify.h">
+      <Filter>Header Files\viewer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

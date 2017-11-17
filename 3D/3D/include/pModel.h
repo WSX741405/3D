@@ -7,58 +7,34 @@
 #include "file/fileFactory.h"
 #include "grabber/grabberNotify.h"
 #include "grabber/grabberFactory.h"
+#include "viewer/viewerNotify.h"
 #include "viewer/viewer.h"
 
-typedef pcl::PointXYZRGBA PointT;
+typedef pcl::PointXYZ PointT;
+
+class ViewerNotify;
 
 class PModel
 {
 public:
-	PModel() : _currFile(NULL)
-	{
-		_fileFactory = new FileFactory<PointT>();
-		_grabberNotify = new GrabberNotify(this);
-		_grabberFactory = new GrabberFactory<PointT>(_grabberNotify);
-		//_viewer = new Viewer<PointT>();
-	}
+	PModel();
 
-	void ClearViewer()
-	{
-
-	}
+	void SetViewerNotify(ViewerNotify* viewerNotify);
 
 	//				File
-	void Open3DFile(std::string dir, std::string filter)
-	{
-		if (filter == std::string("OBJ(*.obj)"))
-		{
-			_currFile = _fileFactory->GetObjFile(dir);
-		}
-		else if (filter == std::string("PLY(*.ply)"))
-		{
-			_currFile = _fileFactory->GetPlyFile(dir);
-		}
-		_currFile->LoadFile();
-
-		//_viewer->Show(_currFile->GetCloud());
-	}
+	void Open3DFile(std::string dir, std::string filter);
+	boost::shared_ptr<pcl::PointCloud<PointT>> GetFilePointCloud();
 
 	//				Grabber
-	void OpenRSGrabber()
-	{
-		_currGrabber = _grabberFactory->GetRSGrabber();
-		_currGrabber->OpenGrabber();
-	}
-
-	void UpdateNewCloudNotify()
-	{
-		_currGrabber->UnlockMutex();
-	}
+	void OpenRSGrabber();
+	boost::shared_ptr<pcl::PointCloud<PointT>> GetGrabberPointCloud();
+	void UpdateNewCloudNotify();
 
 private:
 	FileFactory<PointT>* _fileFactory;
 	GrabberFactory<PointT>* _grabberFactory;
 	GrabberNotify* _grabberNotify;
+	ViewerNotify* _viewerNotify;
 	ThreeDFile<PointT>* _currFile;
 	Grabber<PointT>* _currGrabber;
 };

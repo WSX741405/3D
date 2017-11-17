@@ -5,11 +5,13 @@
 
 #include "ui/mainWindow.h"
 #include "pModel.h"
+#include "viewer/viewerNotify.h"
 
 int main(int argc, char *argv[])
 {
 	QApplication application(argc, argv);
-	MainWindow window(new PModel());
+	ViewerNotify* viewerNotify = new ViewerNotify();
+	MainWindow window(new PModel(), viewerNotify);
 	window.show();
 	return application.exec();
 }

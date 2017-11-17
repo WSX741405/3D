@@ -102,7 +102,7 @@
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>lib;C:\Program Files (x86)\Intel\RSSDK\lib\x64;D:\Software\QT5.7.1\5.7\msvc2015_64\lib;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\lib;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\Boost\lib;D:\Software\PCL-1.8.0-vs2015\PCL 1.8.0\3rdParty\VTK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>real_sense.lib;pcl_io_debug.lib;pcl_common_debug.lib;pcl_visualization_debug.lib;libboost_thread-vc140-mt-gd-1_61.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;vtkGUISupportQt-7.0-gd.lib;vtkInteractionStyle-7.0-gd.lib;vtkImagingColor-7.0-gd.lib;vtkRenderingCore-7.0-gd.lib;vtkCommonColor-7.0-gd.lib;vtkalglib-7.0-gd.lib;vtkImagingFourier-7.0-gd.lib;vtkImagingCore-7.0-gd.lib;vtkFiltersGeometry-7.0-gd.lib;vtkFiltersSources-7.0-gd.lib;vtkFiltersGeneral-7.0-gd.lib;vtkFiltersCore-7.0-gd.lib;vtkCommonExecutionModel-7.0-gd.lib;vtkCommonComputationalGeometry-7.0-gd.lib;vtkCommonDataModel-7.0-gd.lib;vtkCommonMisc-7.0-gd.lib;vtkCommonTransforms-7.0-gd.lib;vtkCommonMath-7.0-gd.lib;vtkCommonSystem-7.0-gd.lib;vtkCommonCore-7.0-gd.lib;vtksys-7.0-gd.lib;vtkzlib-7.0-gd.lib;libpxc_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>real_sense.lib;pcl_io_debug.lib;pcl_common_debug.lib;pcl_visualization_debug.lib;libboost_thread-vc140-mt-gd-1_61.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;vtkGUISupportQt-7.0-gd.lib;vtkIOImage-7.0-gd.lib;vtkInteractionImage-7.0-gd.lib;vtkRenderingCore-7.0-gd.lib;vtkCommonExecutionModel-7.0-gd.lib;vtkCommonCore-7.0-gd.lib;vtkCommonDataModel-7.0-gd.lib;vtkCommonMath-7.0-gd.lib;vtkRenderingOpenGL-7.0-gd.lib;vtkRenderingLOD-7.0-gd.lib;vtkInteractionStyle-7.0-gd.lib;vtksys-7.0-gd.lib;vtkzlib-7.0-gd.lib;libpxc_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -159,13 +159,16 @@
     <ClCompile Include="include\grabber\grabberNotify.cpp" />
     <ClCompile Include="include\grabber\rsgrabber\real_sense_grabber.cpp" />
     <ClCompile Include="include\main.cpp" />
+    <ClCompile Include="include\pModel.cpp" />
     <ClCompile Include="include\ui\mainWindow.cpp" />
+    <ClCompile Include="include\viewer\viewerNotify.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainWindow.h" />
     <ClInclude Include="include\file\3DFile.h" />
     <ClInclude Include="include\file\fileFactory.h" />
     <ClInclude Include="include\file\objFile.h" />
+    <ClInclude Include="include\viewer\viewerNotify.h" />
     <CustomBuild Include="include\ui\mainWindow.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing mainWindow.h...</Message>
@@ -196,7 +199,6 @@
     <ClInclude Include="include\grabber\rsgrabber\real_sense_grabber.h" />
     <ClInclude Include="include\grabber\rsgrabber\time.h" />
     <ClInclude Include="include\pModel.h" />
-    <ClInclude Include="include\viewNotify.h" />
     <ClInclude Include="include\viewer\viewer.h" />
   </ItemGroup>
   <ItemGroup>
