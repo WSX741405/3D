@@ -7,50 +7,37 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>600</height>
+    <height>690</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>mainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="_open3DFileBtn">
+   <widget class="QPushButton" name="_motorTurnLeftBtn">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
+      <x>40</x>
+      <y>600</y>
       <width>75</width>
-      <height>25</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
-     <string>Open 3D File</string>
+     <string>Turn Left</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="_clearViewerBtn">
+   <widget class="QPushButton" name="_motorTurnRightBtn">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>30</y>
+      <x>150</x>
+      <y>600</y>
       <width>75</width>
-      <height>25</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
-     <string>Clear Viewer</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="_openRSBtn">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>30</y>
-      <width>75</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Open RS</string>
+     <string>Turn Right</string>
     </property>
    </widget>
   </widget>
@@ -63,6 +50,20 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="_openFileMenu"/>
+   </widget>
+   <widget class="QMenu" name="menuGrabber">
+    <property name="title">
+     <string>Grabber</string>
+    </property>
+    <addaction name="_openRSMenu"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuGrabber"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -73,6 +74,26 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="_openFileMenu">
+   <property name="text">
+    <string>Open File</string>
+   </property>
+  </action>
+  <action name="_openRSMenu">
+   <property name="text">
+    <string>Open Real Sense</string>
+   </property>
+  </action>
+  <action name="_motorTurnLeftMenu">
+   <property name="text">
+    <string>Motor Turn Left</string>
+   </property>
+  </action>
+  <action name="MotorTurnRightMenu">
+   <property name="text">
+    <string>Motor Turn Right</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

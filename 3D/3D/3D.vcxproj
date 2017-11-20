@@ -156,6 +156,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="include\arduino\tserial.cpp" />
     <ClCompile Include="include\grabber\grabberNotify.cpp" />
     <ClCompile Include="include\grabber\rsgrabber\real_sense_grabber.cpp" />
     <ClCompile Include="include\main.cpp" />
@@ -165,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainWindow.h" />
+    <ClInclude Include="include\arduino\tserial.h" />
     <ClInclude Include="include\file\3DFile.h" />
     <ClInclude Include="include\file\fileFactory.h" />
     <ClInclude Include="include\file\objFile.h" />

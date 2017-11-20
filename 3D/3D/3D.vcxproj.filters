@@ -51,6 +51,12 @@
     <Filter Include="Header Files\grabber\rsgrabber">
       <UniqueIdentifier>{7c319a69-68ad-403a-8e91-e56f03b89666}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\arduino">
+      <UniqueIdentifier>{41a9f3dd-8f8e-4830-851a-4be17e7b45d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\arduino">
+      <UniqueIdentifier>{7cd06025-8f75-459a-af44-08b21a664260}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\main.cpp">
@@ -79,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="include\pModel.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\arduino\tserial.cpp">
+      <Filter>Source Files\arduino</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="include\viewer\viewerNotify.h">
       <Filter>Header Files\viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\arduino\tserial.h">
+      <Filter>Header Files\arduino</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,19 +8,21 @@ MainWindow::MainWindow(PModel* pModel, ViewerNotify* viewerNotify, QWidget *pare
 	_pModel->SetViewerNotify(viewerNotify);
 	InitialVtkWidget();
 	//	  event
-	connect(_ui->_open3DFileBtn, SIGNAL(clicked()), this, SLOT(Open3DFileDialogSlot()));
-	connect(_ui->_clearViewerBtn, SIGNAL(clicked()), this, SLOT(ClearViewerSlot()));
-	connect(_ui->_openRSBtn, SIGNAL(clicked()), this, SLOT(OpenRSGrabberSlot()));
+	connect(_ui->_openFileMenu, SIGNAL(triggered()), this, SLOT(Open3DFileDialogSlot()));
+	//connect(_ui->_clearViewerBtn, SIGNAL(clicked()), this, SLOT(ClearViewerSlot()));
+	connect(_ui->_openRSMenu, SIGNAL(triggered()), this, SLOT(OpenRSGrabberSlot()));
+	connect(_ui->_motorTurnLeftBtn, SIGNAL(pressed()), this, SLOT(MotorTurnLeftSlot()));
+	connect(_ui->_motorTurnRightBtn, SIGNAL(pressed()), this, SLOT(MotorTurnRightSlot()));
 }
 
 void MainWindow::InitialVtkWidget()
 {
 	_widget = new QVTKWidget(this->centralWidget());
-	_widget->setGeometry(QRect(30, 85, 500, 500));
+	_widget->setGeometry(QRect(30, 30, 540, 540));
 
 	_widget->SetRenderWindow(_viewer->GetRenderWindow());
 	_viewer->SetupInteractor(_widget->GetInteractor(), _widget->GetRenderWindow());
-	_viewer->AddCoordinateSystem(2.0);
+	//_viewer->AddCoordinateSystem(2.0);
 	_widget->update();
 }
 
@@ -46,14 +48,26 @@ void MainWindow::Open3DFileDialogSlot()
 	}
 }
 
+/*
 void MainWindow::ClearViewerSlot()
 {
-	//_pModel->ClearViewer();
+	_pModel->ClearViewer();
 }
+*/
 
 void MainWindow::OpenRSGrabberSlot()
 {
 	_pModel->OpenRSGrabber();
+}
+
+void MainWindow::MotorTurnLeftSlot()
+{
+	_pModel->MotorTurnLeft(1);
+}
+
+void MainWindow::MotorTurnRightSlot()
+{
+	_pModel->MotorTurnRight(1);
 }
 
 void MainWindow::ShowFilePointCloud()

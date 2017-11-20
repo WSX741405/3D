@@ -12,6 +12,7 @@ public:
 	{
 		//_viewer = boost::shared_ptr<pcl::visualization::PCLVisualizer>(new pcl::visualization::PCLVisualizer(_title));
 		_viewer.reset(new pcl::visualization::PCLVisualizer(_title, false));
+		_viewer->setBackgroundColor(255, 255, 255);
 	}
 
 	void Clear()

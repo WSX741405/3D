@@ -9,8 +9,9 @@
 #include "grabber/grabberFactory.h"
 #include "viewer/viewerNotify.h"
 #include "viewer/viewer.h"
+#include "arduino/Tserial.h"
 
-typedef pcl::PointXYZ PointT;
+typedef pcl::PointXYZRGBA PointT;
 
 class ViewerNotify;
 
@@ -30,6 +31,10 @@ public:
 	boost::shared_ptr<pcl::PointCloud<PointT>> GetGrabberPointCloud();
 	void UpdateNewCloudNotify();
 
+	//				Arduino
+	void MotorTurnLeft(int distance);
+	void MotorTurnRight(int distance);
+
 private:
 	FileFactory<PointT>* _fileFactory;
 	GrabberFactory<PointT>* _grabberFactory;
@@ -37,6 +42,7 @@ private:
 	ViewerNotify* _viewerNotify;
 	ThreeDFile<PointT>* _currFile;
 	Grabber<PointT>* _currGrabber;
+	Tserial* _arduino;
 };
 
 #endif

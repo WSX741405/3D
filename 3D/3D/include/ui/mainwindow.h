@@ -16,7 +16,7 @@ VTK_MODULE_INIT(vtkInteractionStyle);
 #include "viewer/viewerNotify.h"
 #include "pModel.h"
 
-typedef pcl::PointXYZ PointT;
+typedef pcl::PointXYZRGBA PointT;
 
 class ViewerNotify;
 
@@ -32,8 +32,10 @@ public:
 
 public slots:
 	void Open3DFileDialogSlot();
-	void ClearViewerSlot();
+	//void ClearViewerSlot();
 	void OpenRSGrabberSlot();
+	void MotorTurnLeftSlot();
+	void MotorTurnRightSlot();
 
 private:
 	void InitialVtkWidget();

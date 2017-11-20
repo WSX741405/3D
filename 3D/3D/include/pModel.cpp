@@ -5,6 +5,9 @@ PModel::PModel() : _currFile(NULL)
 	_fileFactory = new FileFactory<PointT>();
 	_grabberNotify = new GrabberNotify(this);
 	_grabberFactory = new GrabberFactory<PointT>(_grabberNotify);
+	_arduino = new Tserial();
+	if (_arduino != 0)
+		_arduino->connect("COM4", 9600, spNONE);
 }
 
 void PModel::SetViewerNotify(ViewerNotify* viewerNotify)
@@ -46,4 +49,22 @@ void PModel::UpdateNewCloudNotify()
 boost::shared_ptr<pcl::PointCloud<PointT>> PModel::GetGrabberPointCloud()
 {
 	return _currGrabber->GetPointCloud();
+}
+
+void PModel::MotorTurnLeft(int distance)
+{
+	//			0    Turn Left
+	unsigned char dir = '0' & 0xff;;
+	unsigned char dis = (distance + '0') & 0xff;;
+	_arduino->sendChar(dir);
+	_arduino->sendChar(dis);
+}
+
+void PModel::MotorTurnRight(int distance)
+{
+	//			1    Turn Right
+	unsigned char dir = '1' & 0xff;;
+	unsigned char dis = (distance + '0') & 0xff;;
+	_arduino->sendChar(dir);
+	_arduino->sendChar(dis);
 }
