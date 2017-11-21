@@ -7,7 +7,8 @@ PModel::PModel() : _currFile(NULL)
 	_grabberFactory = new GrabberFactory<PointT>(_grabberNotify);
 	_arduino = new Tserial();
 	if (_arduino != 0)
-		_arduino->connect("COM4", 9600, spNONE);
+		_arduino->connect("com4", 9600, spNONE);
+	MotorReset();
 }
 
 void PModel::SetViewerNotify(ViewerNotify* viewerNotify)
@@ -65,6 +66,14 @@ void PModel::MotorTurnRight(int distance)
 	//			1    Turn Right
 	unsigned char dir = '1' & 0xff;;
 	unsigned char dis = (distance + '0') & 0xff;;
+	_arduino->sendChar(dir);
+	_arduino->sendChar(dis);
+}
+
+void PModel::MotorReset()
+{
+	unsigned char dir = '2' & 0xff;;
+	unsigned char dis = '0' & 0xff;;
 	_arduino->sendChar(dir);
 	_arduino->sendChar(dis);
 }

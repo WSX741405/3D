@@ -141,7 +141,9 @@ int  Tserial::connect          (char *port_arg, int rate_arg, serial_parity pari
         dcb.EvtChar         = 0;
         
         /* -------------------------------------------------------------------- */
-        serial_handle    = CreateFile((WCHAR *)port, GENERIC_READ | GENERIC_WRITE,
+		WCHAR wsz[64];
+		swprintf(wsz, L"%S", port);
+        serial_handle    = CreateFile(wsz, GENERIC_READ | GENERIC_WRITE,
                                0, NULL, OPEN_EXISTING,NULL,NULL);
                    // opening serial port
 

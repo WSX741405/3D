@@ -1,10 +1,12 @@
 #include <Servo.h>
 
+#define MAX 180
+
 Servo myservo;  // 建立一個 servo 物件，最多可建立 12個 servo
 
 short dir = 0;      // Motor轉的方向
-short distance = 0; // Motor轉的單位
-int pos = 0;    // 設定 Servo 位置的變數
+short dis = 0; // Motor轉的單位
+int pos = 5;    // 設定 Servo 位置的變數
 
 void setup() {
   Serial.begin(9600);
@@ -12,25 +14,26 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(".");
-  while(Serial.available() <=0); // wait for incoming serial data
-  if (Serial.available() >= 2)  // wait for 4 bytes. 
+  if(Serial.available() >= 2)
   {
-      dir = Serial.read();
-      distance = Serial.read();
-      Serial.println(dir);
-      Serial.println(distance);
-      if(dir = 0)
-      {
-          pos +=1;
-          myservo.write(pos);               // 告訴 servo 走到 'pos' 的位置
-          delay(15);                        // 等待 15ms 讓 servo 走到指定位置
-      }
-      else
-      {
-          pos -= 1;
-          myservo.write(pos);               // 告訴 servo 走到 'pos' 的位置
-          delay(15);                        // 等待 15ms 讓 servo 走到指定位置
-      }
+    dir = Serial.read() - 48;
+    dis = Serial.read() - 48;
+    Serial.println(dir);
+    Serial.println(dis);
+    if(dir == 0 and (pos + dis) < MAX)
+    {
+      pos += dis;
+    }
+    else if(dir == 1 and (pos - dis) > 5)
+    {
+      pos -= dis;
+    }
+    else if(dir == 2)
+    {
+      pos = 5;
+    }
   }
+  myservo.write(pos);
+  delay(15);
+  Serial.println(pos);
 }

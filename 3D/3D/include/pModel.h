@@ -34,6 +34,7 @@ public:
 	//				Arduino
 	void MotorTurnLeft(int distance);
 	void MotorTurnRight(int distance);
+	void MotorReset();
 
 private:
 	FileFactory<PointT>* _fileFactory;

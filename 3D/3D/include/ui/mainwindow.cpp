@@ -62,12 +62,12 @@ void MainWindow::OpenRSGrabberSlot()
 
 void MainWindow::MotorTurnLeftSlot()
 {
-	_pModel->MotorTurnLeft(1);
+	_pModel->MotorTurnLeft(30);
 }
 
 void MainWindow::MotorTurnRightSlot()
 {
-	_pModel->MotorTurnRight(1);
+	_pModel->MotorTurnRight(30);
 }
 
 void MainWindow::ShowFilePointCloud()
