@@ -12,9 +12,8 @@ public:
 	}
 
 	virtual void OpenGrabber() = 0;
-	virtual boost::shared_ptr<pcl::PointCloud<PointT>> GetPointCloud() = 0;
+	virtual boost::shared_ptr<const pcl::PointCloud<PointT>> GetPointCloud() = 0;
 	virtual void StopGrabber() = 0;
-	virtual void UnlockMutex() = 0;
 
 protected:
 	GrabberNotify* _grabberNotify;

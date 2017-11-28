@@ -47,7 +47,7 @@ void PModel::UpdateNewCloudNotify()
 	_viewerNotify->UpdateGrabberNotify();
 }
 
-boost::shared_ptr<pcl::PointCloud<PointT>> PModel::GetGrabberPointCloud()
+boost::shared_ptr<const pcl::PointCloud<PointT>> PModel::GetGrabberPointCloud()
 {
 	return _currGrabber->GetPointCloud();
 }

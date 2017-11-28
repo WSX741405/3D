@@ -57,6 +57,12 @@
     <Filter Include="Source Files\arduino">
       <UniqueIdentifier>{7cd06025-8f75-459a-af44-08b21a664260}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\viewer">
+      <UniqueIdentifier>{34e0f40b-bbc0-4bca-beeb-b6b367d215b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\grabber">
+      <UniqueIdentifier>{78465bda-bce3-4b4d-af0a-1c193e07bbf2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\main.cpp">
@@ -77,17 +83,17 @@
     <ClCompile Include="include\grabber\rsgrabber\real_sense_grabber.cpp">
       <Filter>Header Files\grabber\rsgrabber</Filter>
     </ClCompile>
-    <ClCompile Include="include\grabber\grabberNotify.cpp">
-      <Filter>Header Files\grabber</Filter>
-    </ClCompile>
-    <ClCompile Include="include\viewer\viewerNotify.cpp">
-      <Filter>Header Files\viewer</Filter>
-    </ClCompile>
-    <ClCompile Include="include\pModel.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="include\arduino\tserial.cpp">
       <Filter>Source Files\arduino</Filter>
+    </ClCompile>
+    <ClCompile Include="include\pModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\viewer\viewerNotify.cpp">
+      <Filter>Source Files\viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="include\grabber\grabberNotify.cpp">
+      <Filter>Source Files\grabber</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

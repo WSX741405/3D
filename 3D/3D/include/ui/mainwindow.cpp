@@ -22,7 +22,6 @@ void MainWindow::InitialVtkWidget()
 
 	_widget->SetRenderWindow(_viewer->GetRenderWindow());
 	_viewer->SetupInteractor(_widget->GetInteractor(), _widget->GetRenderWindow());
-	//_viewer->AddCoordinateSystem(2.0);
 	_widget->update();
 }
 
@@ -48,6 +47,14 @@ void MainWindow::Open3DFileDialogSlot()
 	}
 }
 
+void MainWindow::ShowFilePointCloud()
+{
+	_viewer->Show(_pModel->GetFilePointCloud());
+	_viewer->ResetCamera();
+	_widget->update();
+	//_widget->update();
+}
+
 /*
 void MainWindow::ClearViewerSlot()
 {
@@ -60,24 +67,19 @@ void MainWindow::OpenRSGrabberSlot()
 	_pModel->OpenRSGrabber();
 }
 
+void MainWindow::ShowGrabberPointCloud()
+{
+	_viewer->Show(_pModel->GetGrabberPointCloud());
+	//_viewer->ResetCamera();
+	_widget->update();
+}
+
 void MainWindow::MotorTurnLeftSlot()
 {
-	_pModel->MotorTurnLeft(30);
+	_pModel->MotorTurnLeft(5);
 }
 
 void MainWindow::MotorTurnRightSlot()
 {
-	_pModel->MotorTurnRight(30);
-}
-
-void MainWindow::ShowFilePointCloud()
-{
-	_viewer->Show(_pModel->GetFilePointCloud());
-	_widget->update();
-}
-
-void MainWindow::ShowGrabberPointCloud()
-{
-	_viewer->Show(_pModel->GetGrabberPointCloud());
-	_widget->update();
+	_pModel->MotorTurnRight(5);
 }

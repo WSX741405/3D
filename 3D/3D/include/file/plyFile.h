@@ -18,7 +18,11 @@ public:
 
 	void LoadFile()
 	{
-		pcl::io::loadPLYFile(_dir, *_cloud);
+		//pcl::io::loadPLYFile(_dir, *_cloud);
+		pcl::PLYReader Reader;
+		Reader.read(_dir, *_cloud);
+		for (size_t index = 0; index < _cloud->points.size(); index++)
+			_cloud->points[index].a = 255;
 	}
 
 	boost::shared_ptr<pcl::PointCloud<PointT>> GetPointCloud()

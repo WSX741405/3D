@@ -10,9 +10,9 @@ class Viewer
 public:
 	Viewer(std::string title = "") : _title(title)
 	{
-		//_viewer = boost::shared_ptr<pcl::visualization::PCLVisualizer>(new pcl::visualization::PCLVisualizer(_title));
+		//_viewer = new pcl::visualization::PCLVisualizer(_title, false);
 		_viewer.reset(new pcl::visualization::PCLVisualizer(_title, false));
-		_viewer->setBackgroundColor(255, 255, 255);
+		//_viewer->setBackgroundColor(255, 255, 255);
 	}
 
 	void Clear()
@@ -22,8 +22,18 @@ public:
 
 	void Show(boost::shared_ptr<pcl::PointCloud<PointT>> cloud)
 	{
-		Clear();		//		clear all point cloud
-		_viewer->addPointCloud(cloud);
+		if(!_viewer->updatePointCloud(cloud))
+			_viewer->addPointCloud(cloud);
+	}
+
+	void Show(boost::shared_ptr<const pcl::PointCloud<PointT>> cloud)
+	{
+		if (!_viewer->updatePointCloud(cloud))
+			_viewer->addPointCloud(cloud);
+	}
+
+	void ResetCamera()
+	{
 		_viewer->resetCamera();
 	}
 
