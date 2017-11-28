@@ -26,6 +26,10 @@ void PModel::Open3DFile(std::string dir, std::string filter)
 	{
 		_currFile = _fileFactory->GetPlyFile(dir);
 	}
+	else if (filter == std::string("PCD(*.pcd)"))
+	{
+		_currFile = _fileFactory->GetPcdFile(dir);
+	}
 	_currFile->LoadFile();
 	_viewerNotify->UpdateFileNotify();
 }
@@ -47,7 +51,7 @@ void PModel::UpdateNewCloudNotify()
 	_viewerNotify->UpdateGrabberNotify();
 }
 
-boost::shared_ptr<const pcl::PointCloud<PointT>> PModel::GetGrabberPointCloud()
+boost::shared_ptr<pcl::PointCloud<PointT>> PModel::GetGrabberPointCloud()
 {
 	return _currGrabber->GetPointCloud();
 }

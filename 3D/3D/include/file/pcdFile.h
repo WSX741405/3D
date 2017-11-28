@@ -1,16 +1,14 @@
-#ifndef PLY_FILE
-#define PLY_FILE
+#ifndef PCD_FILE
+#define PCD_FILE
 
 #include <pcl/io/io.h>
-#include <pcl/io/ply_io.h>
-
-#include "file/3DFile.h";
+#include <pcl/io/pcd_io.h>
 
 template <typename PointT>
-class PlyFile : ThreeDFile<PointT>
+class PcdFile : ThreeDFile<PointT>
 {
 public:
-	PlyFile(std::string dir = "") : ThreeDFile(dir)
+	PcdFile(std::string dir = "") : ThreeDFile(dir)
 	{
 		//_cloud = new pcl::PointCloud<PointT>();
 		_cloud.reset(new pcl::PointCloud<PointT>);
@@ -18,8 +16,8 @@ public:
 
 	void LoadFile()
 	{
-		//pcl::io::loadPLYFile(_dir, *_cloud);
-		pcl::PLYReader reader;
+		//pcl::io::loadPCDFile(_dir, *_cloud);
+		pcl::PCDReader reader;
 		reader.read(_dir, *_cloud);
 		for (size_t index = 0; index < _cloud->points.size(); index++)
 			_cloud->points[index].a = 255;

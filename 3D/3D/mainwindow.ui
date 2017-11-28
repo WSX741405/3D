@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>900</width>
     <height>690</height>
    </rect>
   </property>
@@ -40,13 +40,23 @@
      <string>Turn Right</string>
     </property>
    </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>30</y>
+      <width>260</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>900</width>
      <height>21</height>
     </rect>
    </property>
@@ -81,7 +91,7 @@
   </action>
   <action name="_openRSMenu">
    <property name="text">
-    <string>Open Real Sense</string>
+    <string>RS Get One Frame</string>
    </property>
   </action>
   <action name="_motorTurnLeftMenu">

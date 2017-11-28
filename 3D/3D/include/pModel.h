@@ -28,7 +28,7 @@ public:
 
 	//				Grabber
 	void OpenRSGrabber();
-	boost::shared_ptr<const pcl::PointCloud<PointT>> GetGrabberPointCloud();
+	boost::shared_ptr<pcl::PointCloud<PointT>> GetGrabberPointCloud();
 	void UpdateNewCloudNotify();
 
 	//				Arduino

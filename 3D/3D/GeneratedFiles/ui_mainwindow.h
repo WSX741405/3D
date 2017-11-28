@@ -19,6 +19,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -34,6 +35,7 @@ public:
     QWidget *centralWidget;
     QPushButton *_motorTurnLeftBtn;
     QPushButton *_motorTurnRightBtn;
+    QTableView *tableView;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuGrabber;
@@ -44,7 +46,7 @@ public:
     {
         if (_mainWindow->objectName().isEmpty())
             _mainWindow->setObjectName(QStringLiteral("_mainWindow"));
-        _mainWindow->resize(600, 690);
+        _mainWindow->resize(900, 690);
         _openFileMenu = new QAction(_mainWindow);
         _openFileMenu->setObjectName(QStringLiteral("_openFileMenu"));
         _openRSMenu = new QAction(_mainWindow);
@@ -61,10 +63,13 @@ public:
         _motorTurnRightBtn = new QPushButton(centralWidget);
         _motorTurnRightBtn->setObjectName(QStringLiteral("_motorTurnRightBtn"));
         _motorTurnRightBtn->setGeometry(QRect(150, 600, 75, 30));
+        tableView = new QTableView(centralWidget);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(600, 30, 260, 200));
         _mainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(_mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 21));
+        menuBar->setGeometry(QRect(0, 0, 900, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuGrabber = new QMenu(menuBar);
@@ -91,7 +96,7 @@ public:
     {
         _mainWindow->setWindowTitle(QApplication::translate("_mainWindow", "mainWindow", Q_NULLPTR));
         _openFileMenu->setText(QApplication::translate("_mainWindow", "Open File", Q_NULLPTR));
-        _openRSMenu->setText(QApplication::translate("_mainWindow", "Open Real Sense", Q_NULLPTR));
+        _openRSMenu->setText(QApplication::translate("_mainWindow", "RS Get One Frame", Q_NULLPTR));
         _motorTurnLeftMenu->setText(QApplication::translate("_mainWindow", "Motor Turn Left", Q_NULLPTR));
         MotorTurnRightMenu->setText(QApplication::translate("_mainWindow", "Motor Turn Right", Q_NULLPTR));
         _motorTurnLeftBtn->setText(QApplication::translate("_mainWindow", "Turn Left", Q_NULLPTR));

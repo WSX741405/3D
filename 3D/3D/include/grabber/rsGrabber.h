@@ -4,6 +4,7 @@
 #include "grabber/grabber.h"
 #include "grabber/rsgrabber/real_sense_grabber.h"
 
+#include<pcl/io/ply_io.h>
 
 template <typename PointT>
 class RSGrabber : Grabber<PointT>
@@ -24,12 +25,11 @@ public:
 
 	void OpenGrabber()
 	{
-		boost::mutex::scoped_lock lock(_mutex);
 		_connection = _grabber->registerCallback(_function);
 		_grabber->start();
 	}
 
-	boost::shared_ptr<const pcl::PointCloud<PointT>> GetPointCloud()
+	boost::shared_ptr<pcl::PointCloud<PointT>> GetPointCloud()
 	{
 		return _cloud;
 	}
@@ -42,9 +42,9 @@ public:
 private:
 	void CloudCallback(boost::shared_ptr<const pcl::PointCloud<PointT>> cloud)
 	{
-		_cloud.reset();
 		boost::mutex::scoped_lock lock(_mutex);
-		_cloud = cloud;
+		boost::shared_ptr<pcl::PointCloud<PointT>> cloudCpy = boost::const_pointer_cast<pcl::PointCloud<PointT>>(cloud);
+		_cloud.reset(new pcl::PointCloud<PointT>(*cloudCpy));
 		_grabberNotify->NotifyNewCloudArrived();
 		_connection.disconnect();
 	}
@@ -53,7 +53,7 @@ private:
 	boost::function<void(const boost::shared_ptr<const pcl::PointCloud<PointT>>&)> _function;
 	boost::signals2::connection _connection;
 	pcl::RealSenseGrabber* _grabber;
-	boost::shared_ptr<const pcl::PointCloud<PointT>> _cloud;
+	boost::shared_ptr<pcl::PointCloud<PointT>> _cloud;
 };
 
 #endif

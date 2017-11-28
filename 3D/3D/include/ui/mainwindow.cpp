@@ -52,7 +52,6 @@ void MainWindow::ShowFilePointCloud()
 	_viewer->Show(_pModel->GetFilePointCloud());
 	_viewer->ResetCamera();
 	_widget->update();
-	//_widget->update();
 }
 
 /*
@@ -69,9 +68,11 @@ void MainWindow::OpenRSGrabberSlot()
 
 void MainWindow::ShowGrabberPointCloud()
 {
-	_viewer->Show(_pModel->GetGrabberPointCloud());
-	//_viewer->ResetCamera();
+	boost::shared_ptr<const pcl::PointCloud<PointT>> cloud = _pModel->GetGrabberPointCloud();
+	_viewer->Show(cloud);
 	_widget->update();
+	//_viewer->ResetCamera();
+	//_viewer->SpinOnce();
 }
 
 void MainWindow::MotorTurnLeftSlot()
