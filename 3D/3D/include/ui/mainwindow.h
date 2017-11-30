@@ -26,8 +26,8 @@ class MainWindow : public QMainWindow
 
 public:
 	MainWindow(PModel* pModel, ViewerNotify* viewerNotify, QWidget* parent = 0);
-	void ShowFilePointCloud();
-	void ShowGrabberPointCloud();
+	void UpdatePointCloudTable();
+	void UpdateVTKViewer();
 	~MainWindow();
 
 public slots:
@@ -36,10 +36,13 @@ public slots:
 	void OpenRSGrabberSlot();
 	void MotorTurnLeftSlot();
 	void MotorTurnRightSlot();
+	void TableItemCheckedSlots(QTableWidgetItem* item);
 
 private:
 	void InitialVtkWidget();
+	void InitialPointCloudTable();
 
+	bool _isUpdateTable;
 	Ui::_mainWindow* _ui;
 	Viewer<PointT>* _viewer;
 	ViewerNotify* _viewerNotify;

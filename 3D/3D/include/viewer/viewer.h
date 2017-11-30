@@ -15,21 +15,15 @@ public:
 		//_viewer->setBackgroundColor(255, 255, 255);
 	}
 
-	void Clear()
+	void SetCloudOpacity(std::string name, double value)
 	{
-		_viewer->removeAllPointClouds();
+		_viewer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, value, name);
 	}
 
-	void Show(boost::shared_ptr<pcl::PointCloud<PointT>> cloud)
+	void Show(boost::shared_ptr<pcl::PointCloud<PointT>> cloud, std::string name)
 	{
-		if(!_viewer->updatePointCloud(cloud))
-			_viewer->addPointCloud(cloud);
-	}
-
-	void Show(boost::shared_ptr<const pcl::PointCloud<PointT>> cloud)
-	{
-		if (!_viewer->updatePointCloud(cloud))
-			_viewer->addPointCloud(cloud);
+		if(!_viewer->updatePointCloud(cloud, name))
+			_viewer->addPointCloud(cloud, name);
 	}
 
 	void ResetCamera()

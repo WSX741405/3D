@@ -19,7 +19,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -35,7 +35,7 @@ public:
     QWidget *centralWidget;
     QPushButton *_motorTurnLeftBtn;
     QPushButton *_motorTurnRightBtn;
-    QTableView *tableView;
+    QTableWidget *_pointCloudTable;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuGrabber;
@@ -46,7 +46,7 @@ public:
     {
         if (_mainWindow->objectName().isEmpty())
             _mainWindow->setObjectName(QStringLiteral("_mainWindow"));
-        _mainWindow->resize(900, 690);
+        _mainWindow->resize(1100, 690);
         _openFileMenu = new QAction(_mainWindow);
         _openFileMenu->setObjectName(QStringLiteral("_openFileMenu"));
         _openRSMenu = new QAction(_mainWindow);
@@ -63,13 +63,13 @@ public:
         _motorTurnRightBtn = new QPushButton(centralWidget);
         _motorTurnRightBtn->setObjectName(QStringLiteral("_motorTurnRightBtn"));
         _motorTurnRightBtn->setGeometry(QRect(150, 600, 75, 30));
-        tableView = new QTableView(centralWidget);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(600, 30, 260, 200));
+        _pointCloudTable = new QTableWidget(centralWidget);
+        _pointCloudTable->setObjectName(QStringLiteral("_pointCloudTable"));
+        _pointCloudTable->setGeometry(QRect(600, 30, 460, 200));
         _mainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(_mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 900, 21));
+        menuBar->setGeometry(QRect(0, 0, 1100, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuGrabber = new QMenu(menuBar);

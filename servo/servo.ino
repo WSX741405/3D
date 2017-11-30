@@ -6,7 +6,7 @@
 Servo myservo;  // 建立一個 servo 物件，最多可建立 12個 servo
 
 short dir = 0;      // Motor轉的方向
-short dis = 0; // Motor轉的單位
+short degree = 0; // Motor轉的單位
 int pos = 10;    // 設定 Servo 位置的變數
 
 void setup() {
@@ -18,16 +18,16 @@ void loop() {
   if(Serial.available() >= 2)
   {
     dir = Serial.read() - 48;
-    dis = Serial.read() - 48;
+    degree = Serial.read() - 48;
     Serial.println(dir);
-    Serial.println(dis);
-    if(dir == 0 and (pos + dis) <= MAX)
+    Serial.println(degree);
+    if(dir == 0 and (pos + degree) <= MAX)
     {
-      pos += dis;
+      pos += degree;
     }
-    else if(dir == 1 and (pos - dis) > MIN)
+    else if(dir == 1 and (pos - degree) > MIN)
     {
-      pos -= dis;
+      pos -= degree;
     }
     else if(dir == 2)
     {

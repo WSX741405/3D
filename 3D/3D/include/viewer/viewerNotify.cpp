@@ -5,12 +5,8 @@ void ViewerNotify::Attach(MainWindow* window)
 	_window = window;
 }
 
-void ViewerNotify::UpdateFileNotify()
+void ViewerNotify::UpdatePointCloudNotify()
 {
-	_window->ShowFilePointCloud();
-}
-
-void ViewerNotify::UpdateGrabberNotify()
-{
-	_window->ShowGrabberPointCloud();
+	_window->UpdatePointCloudTable();
+	_window->UpdateVTKViewer();
 }

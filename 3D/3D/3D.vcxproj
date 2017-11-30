@@ -171,7 +171,8 @@
     <ClInclude Include="include\file\fileFactory.h" />
     <ClInclude Include="include\file\objFile.h" />
     <ClInclude Include="include\file\pcdFile.h" />
-    <ClInclude Include="include\pointCloudManager.h" />
+    <ClInclude Include="include\myPointCloud\myPointCloud.h" />
+    <ClInclude Include="include\myPointCloud\myPointClouds.h" />
     <ClInclude Include="include\viewer\viewerNotify.h" />
     <CustomBuild Include="include\ui\mainWindow.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>

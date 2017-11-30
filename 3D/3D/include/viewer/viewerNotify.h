@@ -13,8 +13,7 @@ public:
 	}
 
 	void Attach(MainWindow* window);
-	void UpdateFileNotify();
-	void UpdateGrabberNotify();
+	void UpdatePointCloudNotify();
 
 private:
 	MainWindow* _window;

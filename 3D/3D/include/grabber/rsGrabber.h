@@ -39,6 +39,11 @@ public:
 		_grabber->stop();
 	}
 
+	boost::mutex& GetMutex()
+	{
+		return _mutex;
+	}
+
 private:
 	void CloudCallback(boost::shared_ptr<const pcl::PointCloud<PointT>> cloud)
 	{

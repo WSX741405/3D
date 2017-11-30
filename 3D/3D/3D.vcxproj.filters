@@ -63,6 +63,9 @@
     <Filter Include="Source Files\grabber">
       <UniqueIdentifier>{78465bda-bce3-4b4d-af0a-1c193e07bbf2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\myPointCloud">
+      <UniqueIdentifier>{2577dd1c-15c4-4633-8f7d-162f9db3f9aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\main.cpp">
@@ -165,11 +168,14 @@
     <ClInclude Include="include\arduino\tserial.h">
       <Filter>Header Files\arduino</Filter>
     </ClInclude>
-    <ClInclude Include="include\pointCloudManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\file\pcdFile.h">
       <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myPointCloud\myPointCloud.h">
+      <Filter>Header Files\myPointCloud</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myPointCloud\myPointClouds.h">
+      <Filter>Header Files\myPointCloud</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
