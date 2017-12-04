@@ -12,7 +12,8 @@ MainWindow::MainWindow(PModel* pModel, ViewerNotify* viewerNotify, QWidget *pare
 	//	  event
 	connect(_ui->_openFileMenu, SIGNAL(triggered()), this, SLOT(Open3DFileDialogSlot()));
 	//connect(_ui->_clearViewerBtn, SIGNAL(clicked()), this, SLOT(ClearViewerSlot()));
-	connect(_ui->_openRSMenu, SIGNAL(triggered()), this, SLOT(OpenRSGrabberSlot()));
+	connect(_ui->_startRSMenu, SIGNAL(triggered()), this, SLOT(StartRSGrabberSlot()));
+	connect(_ui->_stopRSMenu, SIGNAL(triggered()), this, SLOT(StopGrabberSlot()));
 	connect(_ui->_motorTurnLeftBtn, SIGNAL(pressed()), this, SLOT(MotorTurnLeftSlot()));
 	connect(_ui->_motorTurnRightBtn, SIGNAL(pressed()), this, SLOT(MotorTurnRightSlot()));
 	connect(_ui->_pointCloudTable, SIGNAL(itemChanged(QTableWidgetItem *)), this, SLOT(TableItemCheckedSlots(QTableWidgetItem *)));
@@ -107,9 +108,14 @@ void MainWindow::ClearViewerSlot()
 }
 */
 
-void MainWindow::OpenRSGrabberSlot()
+void MainWindow::StartRSGrabberSlot()
 {
-	_pModel->OpenRSGrabber();
+	_pModel->StartRSGrabber();
+}
+
+void MainWindow::StopGrabberSlot()
+{
+	_pModel->StopGrabber();
 }
 
 void MainWindow::MotorTurnLeftSlot()

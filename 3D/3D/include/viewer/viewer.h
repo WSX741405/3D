@@ -22,8 +22,8 @@ public:
 
 	void Show(boost::shared_ptr<pcl::PointCloud<PointT>> cloud, std::string name)
 	{
-		if(!_viewer->updatePointCloud(cloud, name))
-			_viewer->addPointCloud(cloud, name);
+		//if(!_viewer->updatePointCloud(cloud, name))
+		_viewer->addPointCloud(cloud, name);
 	}
 
 	void ResetCamera()

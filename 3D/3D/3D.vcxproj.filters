@@ -123,9 +123,6 @@
     <ClInclude Include="include\file\objFile.h">
       <Filter>Header Files\file</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_mainWindow.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\pModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -176,6 +173,9 @@
     </ClInclude>
     <ClInclude Include="include\myPointCloud\myPointClouds.h">
       <Filter>Header Files\myPointCloud</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

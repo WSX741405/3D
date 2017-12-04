@@ -28,7 +28,8 @@ public:
 	boost::shared_ptr<pcl::PointCloud<PointT>> GetFilePointCloud();
 
 	//				Grabber
-	void OpenRSGrabber();
+	void StartRSGrabber();
+	void StopGrabber();
 	boost::shared_ptr<pcl::PointCloud<PointT>> GetGrabberPointCloud();
 	boost::mutex& GetGrabberMutex();
 	void UpdateNewCloudNotify();

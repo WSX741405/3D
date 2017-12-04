@@ -23,7 +23,7 @@ public:
 		_connection.disconnect();
 	}
 
-	void OpenGrabber()
+	void StartGrabber()
 	{
 		_connection = _grabber->registerCallback(_function);
 		_grabber->start();
@@ -51,7 +51,7 @@ private:
 		boost::shared_ptr<pcl::PointCloud<PointT>> cloudCpy = boost::const_pointer_cast<pcl::PointCloud<PointT>>(cloud);
 		_cloud.reset(new pcl::PointCloud<PointT>(*cloudCpy));
 		_grabberNotify->NotifyNewCloudArrived();
-		_connection.disconnect();
+		//_connection.disconnect();
 	}
 
 	mutable boost::mutex _mutex;

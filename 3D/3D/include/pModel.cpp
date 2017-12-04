@@ -44,10 +44,15 @@ boost::shared_ptr<pcl::PointCloud<PointT>> PModel::GetFilePointCloud()
 //*******************************************************************************
 //				Grabber
 //*******************************************************************************
-void PModel::OpenRSGrabber()
+void PModel::StartRSGrabber()
 {
 	_currGrabber = _grabberFactory->GetRSGrabber();
-	_currGrabber->OpenGrabber();
+	_currGrabber->StartGrabber();
+}
+
+void PModel::StopGrabber()
+{
+	_currGrabber->StopGrabber();
 }
 
 void PModel::UpdateNewCloudNotify()

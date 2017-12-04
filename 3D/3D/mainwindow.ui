@@ -70,7 +70,8 @@
     <property name="title">
      <string>Grabber</string>
     </property>
-    <addaction name="_openRSMenu"/>
+    <addaction name="_startRSMenu"/>
+    <addaction name="_stopRSMenu"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuGrabber"/>
@@ -89,9 +90,9 @@
     <string>Open File</string>
    </property>
   </action>
-  <action name="_openRSMenu">
+  <action name="_startRSMenu">
    <property name="text">
-    <string>RS Get One Frame</string>
+    <string>Start RS</string>
    </property>
   </action>
   <action name="_motorTurnLeftMenu">
@@ -102,6 +103,11 @@
   <action name="MotorTurnRightMenu">
    <property name="text">
     <string>Motor Turn Right</string>
+   </property>
+  </action>
+  <action name="_stopRSMenu">
+   <property name="text">
+    <string>Stop RS</string>
    </property>
   </action>
  </widget>

@@ -165,7 +165,7 @@
     <ClCompile Include="include\viewer\viewerNotify.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_mainWindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h" />
     <ClInclude Include="include\arduino\tserial.h" />
     <ClInclude Include="include\file\3DFile.h" />
     <ClInclude Include="include\file\fileFactory.h" />

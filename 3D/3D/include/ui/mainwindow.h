@@ -33,7 +33,8 @@ public:
 public slots:
 	void Open3DFileDialogSlot();
 	//void ClearViewerSlot();
-	void OpenRSGrabberSlot();
+	void StartRSGrabberSlot();
+	void StopGrabberSlot();
 	void MotorTurnLeftSlot();
 	void MotorTurnRightSlot();
 	void TableItemCheckedSlots(QTableWidgetItem* item);
